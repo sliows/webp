@@ -1,0 +1,20 @@
+body {
+  background-color: aliceblue;
+}
+
+h2 {
+  color: brown;
+}
+
+.form-group {
+  background-color: pink;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+footer {
+  background-color: orange;
+  border-radius: 10px;
+  padding: 8px;
+  font-weight: bold;
+}
