@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 홈페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/my.css">
+</head>
+<body>
+    <!--전체 공백 조절 -->
+    <div class="wrapper">
+    <!--헤더에는 프로필, 이름, 직업, 나이, 내 소개-->
+    <section>
+    <header>
+    <div style = "width: 150px; height: 130px; display: inline-block;">
+    <img 
+    src="images/seok.jpg"    
+    class="w-32 h-32 rounded-full object-cover border-2 border-indigo-500 shadow-md"
+    >
+    </div>
+    <div style = "width: 150px; height: 110px; display: inline-block;">
+   <table>
+                <tbody>
+                    <tr>
+                        <th style="display: none;">이름</th>
+                        <td style="font-weight: bold; font-size: 20px;">김석현</td>
+                    </tr>
+                    <tr>
+                        <th>직업</th>
+                        <td>개발자</td>
+                    </tr>
+                    <tr>
+                        <th>나이</th>
+                        <td>38</td>
+                    </tr>
+                    <tr>
+                        <th>거주지</th>
+                        <td>부산</td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
+    </header>
+    </section>
+    <!--메인에는 내 소개 + 좋아하는 음악 영상-->
+    <main>
+    <section>
+    <pre style="white-space: pre-wrap; font-size: 16px;">안녕하십니까, 문제 해결에 몰입하는 소프트웨어학과 김석현입니다.
+전공 과정을 통해 C, Python, Java 등 다양한 언어를 익히며 기본기를 다지고 있습니다.
+배운 이론을 바탕으로 실제 서비스 환경에서 안정적인 시스템을 구축하는 개발자로 성장하고 싶습니다.</pre>
+    </section>
+    <section>
+    <h6 style="font-weight: bold; font-size: 18px; margin-bottom: 10px;">좋아하는 음악</h6>
+    <div style="display: flex; justify-content: space-between; gap: 10px;">
+    <iframe style= "border-radius: 10px; display: inline-block; flex: 1;" width="100%" height="315" src="https://www.youtube.com/embed/CbFTHGXYkmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe style= "border-radius: 10px; display: inline-block; flex: 1;" width="100%" height="315" src="https://www.youtube.com/embed/4-2Oqf55Ff0?si=d5lUnEPd5UoMHYNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe style= "border-radius: 10px; display: inline-block; flex: 1;" width="100%" height="315" src="https://www.youtube.com/embed/Ju9OLNOBxeg?si=YP85YwAuMN6Vk-Eu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    </section>
+    </main>
+    <!--내가 배운 것들 + 공부할때 사용하는 사이트들-->
+    <footer class="flex w-full gap-5 p-1 bg-gray-100 mx-auto">
+        <section class = "flex-1">
+            <div id="skill">
+                <h6 style="font-weight: bold; font-size: 18px;">SKILLS</h6>
+                 <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JAVA</li>
+                <li>Javascript</li>
+                
+            </ol>
+            </div>
+        </section>
+        <section class = "flex-1">
+            <div >
+                <h6 style="font-weight: bold; font-size: 18px;">공부할때 사용하는 사이트</h6>
+                <a  href="https://programmers.co.kr" target="_blank"><u>프로그래머스</u></a><br>
+                <a href="https://github.com/" target="_blank"><u>GitHub</u></a><br>   
+                <a href="https://gemini.google.com/app?hl=ko" target="_blank"><u>Gemini</u></a>  
+            </div>
+        </section>
+        <section class = "flex-1">
+            <div id="contact">
+                <h6 style="font-weight: bold; font-size: 18px;">Contact</h6>
+            <ul>
+                <li>
+                    <a href="tel:01067476730">010-6747-6730</a>
+                </li>
+                <li>
+                    <a href="mailto:sk01067476730@gmail.com" target="_blank">sk01067476730@gmail.com</a>
+                </li>
+            </ul>  
+            </div>
+        </section>
+    </footer>
+    </div>
+</body>
+</html>
