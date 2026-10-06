@@ -1,0 +1,30 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+header {
+    height: 20%;
+    background-color: yellow;
+}
+
+nav {
+    float: left;
+    width: 20%;
+    height: 142%;
+    background-color: orange;
+}
+
+section {
+    float: right;
+    width: 80%;
+    height: 72%;
+    background-color: lightgray;
+}
+
+footer {
+    clear: both;
+    height: 8%;
+    background-color: plum;
+}
