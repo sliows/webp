@@ -1,0 +1,85 @@
+(JComponentEx)
+////////////////////////////////////////////////////////////////////
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class JComponentEx extends JFrame {
+	public JComponentEx() {
+		super("JComponent의 공통 메소드 예제");
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		
+		JButton b1 = new JButton("Magenta/Yellow Button");
+		JButton b2 = new JButton("    Disabled Button    ");
+		JButton b3 = new JButton("getX(), getY()");
+		
+		//(1)
+		b3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton b = (JButton)e.getSource();
+				//(2)
+			}
+		});
+		
+		c.add(b1); c.add(b2); c.add(b3); // 컨텐트팬에 버튼 부착
+		
+		setSize(260,200); 
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		new JComponentEx();
+	}
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+LabelEx
+/////////////////////////////////////////////////////////////////////////
+
+////////
+실습예제
+///////////////////////
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class CheckBoxPracticeFrame extends JFrame {
+	private JButton btn = new JButton("test button");
+	
+	public CheckBoxPracticeFrame() {
+		super("CheckBox Practice Frame");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		
+		// 체크박스 컴포넌트 2개 생성
+		JCheckBox a = new JCheckBox("버튼 비활성화");
+		JCheckBox b = new JCheckBox("버튼 감추기");
+		
+		// 체크박스 컴포넌트들과 버튼을 컨텐트팬에 부착
+		c.add(a);
+		c.add(b);		
+		c.add(btn);
+		
+		a.addItemListener(new ItemListener() { // 체크 박스 a가 선택/해제 되는 경우 리스너
+			@Override
+			(1)
+		});
+		
+		b.addItemListener(new ItemListener() { // 체크 박스 b가 선택/해제 되는 경우 리스너
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				(2)
+			}
+		});
+
+		setSize(250,130);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new CheckBoxPracticeFrame();
+	}
+}
