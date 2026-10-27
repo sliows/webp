@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>별 문자 출력하기</title>
+</head>
+<body>
+    <h3>별 문자 출력하기</h3>
+    <hr>
+    <script>
+        function printStar() {
+            let input = prompt("정수를 입력하세요", "");
+            let n = parseInt(input);
+
+            // 양의 정수가 아니거나 숫자가 아닌 경우 예외 처리
+            if (isNaN(n) || n <= 0) {
+                document.write("입력 오류 입니다.");
+                return;
+            }
+
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+
+        printStar();
+    </script>
+</body>
+</html>
