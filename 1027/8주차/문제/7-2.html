@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 계속 회전</title>
+</head>
+<body>
+    <h3>클릭하면 90도 회전합니다.</h3>
+    <hr>
+
+    <img src="media/spongebob.png"
+         id="myImg"
+         width="100"
+         alt="이미지"
+         onclick="rotateImg()">
+
+    <script>
+        let angle = 0;
+
+        function rotateImg() {
+            let img = document.getElementById("myImg");
+
+            angle += 90;
+
+            img.style.transform = "rotate(" + angle + "deg)";
+        }
+    </script>
+</body>
+</html>

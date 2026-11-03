@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>z-index 스타일 프로퍼티</title>
+
+    <style>
+        #cards {
+            position: relative;
+            width: 100px;
+            height: 140px;
+        }
+
+        #cards img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 140px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>z-index 스타일 프로퍼티</h3>
+    <hr>
+
+    <div id="cards">
+        <img src="media/spade-A.png" style="z-index:1"
+             onclick="moveCard(this)" alt="스페이드 A">
+
+        <img src="media/spade-2.png" style="z-index:2"
+             onclick="moveCard(this)" alt="스페이드 2">
+
+        <img src="media/spade-3.png" style="z-index:3"
+             onclick="moveCard(this)" alt="스페이드 3">
+
+        <img src="media/spade-7.png" style="z-index:4"
+             onclick="moveCard(this)" alt="스페이드 7">
+    </div>
+
+    <script>
+        function moveCard(obj) {
+            let cards = document.getElementsByTagName("img");
+            let current = Number(obj.style.zIndex);
+
+            for (let i = 0; i < cards.length; i++) {
+                let z = Number(cards[i].style.zIndex);
+
+                if (z < current) {
+                    cards[i].style.zIndex = z + 1;
+                }
+            }
+
+            obj.style.zIndex = 1;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>갬블링 게임</title>
+
+    <style>
+        #game {
+            display: inline-block;
+            border: 1px solid violet;
+            background-color: #f5e9db;
+            padding: 10px;
+        }
+
+        .number {
+            display: inline-block;
+            width: 40px;
+            text-align: center;
+            font-size: 40px;
+            font-style: italic;
+            color: blue;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            color: purple;
+            font-style: italic;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>갬블링 게임</h3>
+
+    <p>
+        각 숫자를 클릭하면 0에서 2 사이의 난수로 바뀝니다.
+        모두 같은 수가 나오면 승리합니다.
+    </p>
+
+    <hr>
+
+    <div id="game">
+        <span class="number" onclick="changeNumber(this)">0</span>
+        <span class="number" onclick="changeNumber(this)">0</span>
+        <span class="number" onclick="changeNumber(this)">0</span>
+    </div>
+
+    <div id="result" onclick="restartGame()"></div>
+
+    <script>
+        let clickCount = 0;
+
+        function changeNumber(obj) {
+            if (clickCount >= 3) {
+                return;
+            }
+
+            if (obj.dataset.clicked === "true") {
+                return;
+            }
+
+            let randomNumber = Math.floor(Math.random() * 3);
+
+            obj.textContent = randomNumber;
+            obj.dataset.clicked = "true";
+
+            clickCount++;
+
+            if (clickCount === 3) {
+                checkResult();
+            }
+        }
+
+        function checkResult() {
+            let numbers = document.getElementsByClassName("number");
+
+            let a = numbers[0].textContent;
+            let b = numbers[1].textContent;
+            let c = numbers[2].textContent;
+
+            let result = document.getElementById("result");
+
+            if (a === b && b === c) {
+                result.textContent =
+                    "Success(click here to do again)";
+            } else {
+                result.textContent =
+                    "fail(click here to do again)";
+            }
+        }
+
+        function restartGame() {
+            if (clickCount !== 3) {
+                return;
+            }
+
+            let numbers = document.getElementsByClassName("number");
+
+            for (let i = 0; i < numbers.length; i++) {
+                numbers[i].textContent = "0";
+                numbers[i].dataset.clicked = "false";
+            }
+
+            clickCount = 0;
+
+            document.getElementById("result").textContent = "";
+        }
+    </script>
+</body>
+</html>
