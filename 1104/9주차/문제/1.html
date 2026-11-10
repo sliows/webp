@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>onblur와 onfocus</title>
+<script>
+window.onblur = function() {
+    document.body.style.backgroundColor = "lightgray";
+};
+
+window.onfocus = function() {
+    document.body.style.backgroundColor = "white";
+};
+</script>
+</head>
+<body>
+<h3>포커스와 onblur/onfocus</h3>
+<hr>
+<p>브라우저 바깥에 마우스를 클릭하면
+배경색이 변경됩니다.</p>
+</body>
+</html>

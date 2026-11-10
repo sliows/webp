@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>onmouseover와 onmouseout</title>
+<style>
+#detail {
+    position: absolute;
+    visibility: hidden;
+    background-color: lightblue;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 230px;
+    pointer-events: none;
+}
+</style>
+<script>
+function show(e, text) {
+    let detail = document.getElementById("detail");
+
+    detail.innerHTML = text;
+    detail.style.left = (e.pageX + 10) + "px";
+    detail.style.top = (e.pageY + 10) + "px";
+    detail.style.visibility = "visible";
+}
+
+function move(e) {
+    let detail = document.getElementById("detail");
+
+    detail.style.left = (e.pageX + 10) + "px";
+    detail.style.top = (e.pageY + 10) + "px";
+}
+
+function hide() {
+    document.getElementById("detail")
+        .style.visibility = "hidden";
+}
+</script>
+</head>
+<body>
+<h3>아이템에 마우스를 올리면 설명 출력</h3>
+<hr>
+<p>여름 방학 때 하고 싶은 것들</p>
+
+<ul>
+<li onmouseover="show(event, '자전거를 타고 전국을 여행한다.')"
+    onmousemove="move(event)"
+    onmouseout="hide()">
+    자전거로 대한민국 일주
+</li>
+
+<li onmouseover="show(event, '방학 동안 책 100권 읽기에 도전한다.')"
+    onmousemove="move(event)"
+    onmouseout="hide()">
+    책 100권 읽기
+</li>
+
+<li onmouseover="show(event, '수영, 자전거, 달리기를 준비한다.')"
+    onmousemove="move(event)"
+    onmouseout="hide()">
+    철인 3종 경기 준비
+</li>
+
+<li onmouseover="show(event, '자바스크립트 문법과 이벤트를 공부한다.')"
+    onmousemove="move(event)"
+    onmouseout="hide()">
+    자바스크립트 정복
+</li>
+</ul>
+
+<div id="detail"></div>
+</body>
+</html>

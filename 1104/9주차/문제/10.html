@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>계산기 만들기</title>
+<style>
+#display {
+    width: 290px;
+    height: 25px;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 5px;
+}
+
+button {
+    height: 30px;
+}
+</style>
+</head>
+<body>
+<h3>계산기 만들기</h3>
+<hr>
+
+<input id="display" type="text" value="00" readonly>
+<div id="buttons"></div>
+
+<script>
+let display = document.getElementById("display");
+
+let keys = [
+    "BACK", "CE", "C", "=",
+    "7", "8", "9", "/",
+    "4", "5", "6", "*",
+    "1", "2", "3", "-",
+    "0", "+", "NONE", "NONE"
+];
+
+function press(key) {
+    if (key === "NONE") {
+        return;
+    }
+
+    if (key === "CE" || key === "C") {
+        display.value = "00";
+        return;
+    }
+
+    if (key === "BACK") {
+        display.value = display.value.slice(0, -1);
+
+        if (display.value === "") {
+            display.value = "00";
+        }
+        return;
+    }
+
+    if (key === "=") {
+        try {
+            display.value = eval(display.value);
+        } catch (e) {
+            display.value = "오류";
+        }
+        return;
+    }
+
+    if (display.value === "00" ||
+        display.value === "오류") {
+        display.value = key;
+    } else {
+        display.value += key;
+    }
+}
+
+let buttons = document.getElementById("buttons");
+
+for (let i = 0; i < keys.length; i++) {
+    let button = document.createElement("button");
+    button.innerText = keys[i];
+
+    button.onclick = function() {
+        press(keys[i]);
+    };
+
+    buttons.appendChild(button);
+}
+</script>
+</body>
+</html>
